@@ -9,6 +9,7 @@ intents = discord.Intents.all()
 intents.messages = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 # this system is really bad, i dont encourage using it like this but this temp is mainly for me lol
+# unfortuntly this messy code is made by kingofnetflix
 
 @bot.event
 async def on_ready():
@@ -16,7 +17,7 @@ async def on_ready():
 
 @bot.tree.command(name="example", description="example interaction / slash command")
 async def example(interaction: discord.Interaction):
-    await interaction.response.send_message('hello')
+    await interaction.response.send_message('hello, i am a example bot made by kingofnetflix')
 
 
 bot.run('TOKEN')
