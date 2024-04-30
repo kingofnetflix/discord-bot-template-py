@@ -1,0 +1,22 @@
+import random
+import discord
+import aiohttp
+import asyncio
+from discord import app_commands
+from discord.ext import commands
+
+intents = discord.Intents.all()
+intents.messages = True
+bot = commands.Bot(command_prefix='!', intents=intents)
+// this system is really bad, i dont encourage using it like this but this temp is mainly for me lol
+
+@bot.event
+async def on_ready():
+    print(f'logged in as {bot.user.name} cuhhh')
+
+@bot.tree.command(name="example", description="example interaction / slash command")
+async def check_bots(interaction: discord.Interaction):
+    await interaction.response.send_message('hello')
+
+
+bot.run('TOKEN')
